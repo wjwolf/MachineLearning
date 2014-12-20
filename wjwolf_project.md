@@ -46,7 +46,7 @@ roll_ belt, pitch_ belt and yaw_ belt are the most important.
 ```{r}
 # create random forest
 model<-randomForest(classe ~ ., training.set, ntree=100, importance=TRUE)
-head(model$importance)
+print(head(model$importance))
 ```
 
 
@@ -58,7 +58,7 @@ of sample error against the test partition of 99.3%.
 # evaluate model with testing partition
 predictions<-predict(model,newdata=testing.set)
 confusion<-confusionMatrix(predictions,testing.set$classe)
-confusion
+print(confusion)
 ```
 
 4.  Since the model is acceptably accurate make additional predicitions against
